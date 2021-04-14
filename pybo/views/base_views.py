@@ -26,7 +26,8 @@ def index(request):
     paginator = Paginator(question_list, 10) # 페이지 당 10개씩 보여주기
     page_obj = paginator.get_page(page)
 
-    context = {'question_list' : page_obj, 'page': page, 'kw': kw} #page와 kw가 추가가    return render(request, 'pybo/question_list.html', context)
+    context = {'question_list' : page_obj, 'page': page, 'kw': kw} #page와 kw가 추가가
+    return render(request, 'pybo/question_list.html', context)
     #render함수는 context에 있는 question 모델 데이터 question_list를 pybo/question_list.html 파일에 적용하여
     #HTML 코드로 변환한다.
 
